@@ -1,8 +1,10 @@
 <template>
-  <h1>ToDo App</h1>
-  <p>Test Todo App</p>
-  <ToDoInput :inputText="state.inputText" @typeText="typeText" @add="add" />
-  <ToDoList :todos="state.todos" />
+  <div class="content">
+    <h1>ToDo App</h1>
+    <p>Test Todo App</p>
+    <ToDoInput :inputText="state.inputText" @typeText="typeText" @add="add" />
+    <ToDoList :todos="state.todos" />
+  </div>
 </template>
 
 <script>
@@ -40,4 +42,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+h1 {
+  color: #6a8bad;
+}
+.content {
+  color: #4e6e8e;
+}
+</style>

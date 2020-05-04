@@ -1,5 +1,5 @@
 <template>
-  <input type="text" v-model="state.inputText" />
+  <input type="text" v-model="state.inputText" @keydown.enter="add" />
   <button @click="add">add</button>
 </template>
 
