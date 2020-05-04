@@ -1,24 +1,43 @@
 <template>
-  <h1>Hello Vite + Vue 3!</h1>
-  <p>Edit ./App.vue to test hot module replacement (HMR).</p>
-  <p>
-    <span>Count is: {{ count }}</span>
-    <button @click="count++">increment</button>
-  </p>
+  <h1>ToDo App</h1>
+  <p>Test Todo App</p>
+  <ToDoInput :inputText="state.inputText" @typeText="typeText" @add="add" />
+  <ToDoList :todos="state.todos" />
 </template>
 
 <script>
+import { reactive } from "vue";
+
+import ToDoInput from "./ToDoInput.vue";
+import ToDoList from "./ToDoList.vue";
+
 export default {
-  data: () => ({ count: 0 })
-}
+  components: {
+    ToDoInput,
+    ToDoList
+  },
+  setup() {
+    const state = reactive({
+      inputText: "",
+      todos: []
+    });
+
+    function typeText(text) {
+      state.inputText = text;
+    }
+
+    function add() {
+      state.todos.push(state.inputText);
+      state.inputText = "";
+    }
+
+    return {
+      state,
+      typeText,
+      add
+    };
+  }
+};
 </script>
 
-<style scoped>
-h1 {
-  color: #4fc08d;
-}
-
-h1, p {
-  font-family: Arial, Helvetica, sans-serif;
-}
-</style>
+<style lang="scss" scoped></style>
