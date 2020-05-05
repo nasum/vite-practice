@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import { reactive, computed } from "vue";
+import { computed } from "vue";
 export default {
   props: {
     inputText: String
