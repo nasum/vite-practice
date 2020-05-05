@@ -17,10 +17,6 @@ export default {
       })
     };
 
-    function typeText(e) {
-      context.emit("typeText", e.target.valuel);
-    }
-
     function add() {
       context.emit("add");
     }
