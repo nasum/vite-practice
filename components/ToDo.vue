@@ -1,8 +1,5 @@
 <template>
   <div class="content">
-    <h1>ToDo App</h1>
-    <p>Test Todo App</p>
-    <ToDoAnalytics />
     <ToDoInput :inputText="state.inputText" @typeText="typeText" @add="add" />
     <ToDoList :todos="state.todos" />
   </div>
@@ -13,13 +10,11 @@ import { reactive } from "vue";
 
 import ToDoInput from "./ToDoInput.vue";
 import ToDoList from "./ToDoList.vue";
-import ToDoAnalytics from "./ToDoAnalytics.vue";
 
 export default {
   components: {
     ToDoInput,
-    ToDoList,
-    ToDoAnalytics
+    ToDoList
   },
   setup() {
     const state = reactive({

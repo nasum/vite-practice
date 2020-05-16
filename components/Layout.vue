@@ -1,8 +1,16 @@
 <template>
   <div id="root">
-    <div id="nav">
-      <router-link to="/todo"> ToDo</router-link>
-    </div>
+    <MyHeader />
     <router-view />
   </div>
 </template>
+
+<script lang="ts">
+import MyHeader from "./MyHeader.vue";
+export default {
+  components: {
+    MyHeader
+  }
+};
+</script>
+>
