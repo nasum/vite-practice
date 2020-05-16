@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>TodoApp</h1>
+    <h1><RouterLink to="/">TodoApp</RouterLink></h1>
     <ul>
       <li><RouterLink to="/users">users</RouterLink></li>
       <li><RouterLink to="/todos">todos</RouterLink></li>
@@ -17,13 +17,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+a {
+  text-decoration: none;
+}
 header {
   display: flex;
   flex-direction: row;
   hegit: 74px;
 }
 h1 {
-  color: #6a8bad;
+  a {
+    color: #6a8bad;
+  }
 }
 ul {
   display: flex;
