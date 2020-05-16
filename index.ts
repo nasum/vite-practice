@@ -1,5 +1,16 @@
 import { createApp } from "vue";
-import App from "./App.vue";
+import { createRouter, createWebHistory } from "vue-router";
+import Layout from "./components/Layout.vue";
+import App from "./components/App.vue";
 
-const app = createApp(App);
+const history = createWebHistory();
+const routes = [
+  {
+    path: "/todo",
+    component: App
+  }
+];
+const router = createRouter({ routes, history });
+const app = createApp(Layout);
+app.use(router);
 app.mount("#app");
